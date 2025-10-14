@@ -2,9 +2,7 @@ package ar.edu.unlu.poo.labo2.artefactos;
 
 import ar.edu.unlu.poo.labo2.artefactos.Artefacto;
 import ar.edu.unlu.poo.labo2.artefactos.CatalogoArtefactos;
-import ar.edu.unlu.poo.labo2.estrategias.EstrategiaDeMejora;
-import ar.edu.unlu.poo.labo2.estrategias.ForjadorDeRunas;
-import ar.edu.unlu.poo.labo2.estrategias.JoyeroElfico;
+import ar.edu.unlu.poo.labo2.estrategias.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -68,7 +66,8 @@ class CatalogoMejoradoTest {
     EstrategiaDeMejora estrategiaJoyería = new JoyeroElfico();
     CatalogoArtefactos catalogo = new CatalogoArtefactos(estrategiaJoyería);
     catalogo.agregarArtefacto(amuletoFuerte);
-    catalogo.agregarArtefacto(pergaminoInutil); // Se agrega para asegurar que no lo modifica.
+      Artefacto pergaminoInutil = new Artefacto("PergaminoInutil",10,"Pergamino");
+      catalogo.agregarArtefacto(pergaminoInutil); // Se agrega para asegurar que no lo modifica.
 
     catalogo.aplicarMejoras();
 
